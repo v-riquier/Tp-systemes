@@ -35,13 +35,13 @@
      <rect>
       <x>70</x>
       <y>170</y>
-      <width>91</width>
+      <width>81</width>
       <height>23</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>12</pointsize>
+      <pointsize>8</pointsize>
      </font>
     </property>
     <property name="text">
@@ -79,19 +79,6 @@
       <width>113</width>
       <height>20</height>
      </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="EnvoiMessage">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>200</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Envoi</string>
     </property>
    </widget>
    <widget class="QLabel" name="AffConnexion">
@@ -200,5 +187,93 @@
  <resources>
   <include location="Tpcloches.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>Connection</sender>
+   <signal>clicked()</signal>
+   <receiver>TpclochesClass</receiver>
+   <slot>onConnectButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>110</x>
+     <y>214</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>313</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Btncloche1</sender>
+   <signal>clicked()</signal>
+   <receiver>TpclochesClass</receiver>
+   <slot>BtnCloche1Clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>213</x>
+     <y>326</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>313</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Btncloche2</sender>
+   <signal>clicked()</signal>
+   <receiver>TpclochesClass</receiver>
+   <slot>BtnCloche2Clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>353</x>
+     <y>326</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>313</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Btncloche3</sender>
+   <signal>clicked()</signal>
+   <receiver>TpclochesClass</receiver>
+   <slot>BtnCloche3Clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>213</x>
+     <y>376</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>313</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Btncloche4</sender>
+   <signal>clicked()</signal>
+   <receiver>TpclochesClass</receiver>
+   <slot>BtnCloche4Clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>353</x>
+     <y>376</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>313</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>onConnectButtonClicked()</slot>
+  <slot>BtnCloche1Clicked()</slot>
+  <slot>BtnCloche2Clicked()</slot>
+  <slot>BtnCloche3Clicked()</slot>
+  <slot>BtnCloche4Clicked()</slot>
+ </slots>
 </ui>
