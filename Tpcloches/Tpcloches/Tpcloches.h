@@ -14,11 +14,14 @@ public:
 
 public slots:
 	void onConnectButtonClicked();
+	void onDisconnectButtonClicked();
 	void onSocketConnected();
+	void onSocketDisconnected();
 	void BtnCloche1Clicked();
 	void BtnCloche2Clicked();
 	void BtnCloche3Clicked();
 	void BtnCloche4Clicked();
+	void ControleClavier();
 
 private:
     Ui::TpclochesClass ui;
