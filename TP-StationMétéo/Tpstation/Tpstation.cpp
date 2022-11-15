@@ -1,3 +1,14 @@
+/*********************************************************************************************
+//* Programme : Tpstation.cpp date : 15/11/2022
+//*---------------------------------------------------------------------------------------------------------
+//* dernière mise a jour : 15/11/2022
+//*
+//*Programmeurs : Riquier Vincent classe : BTSSN2
+//* Ciss Aissatou
+//*--------------------------------------------------------------------------------------------------------
+//* BUT : Obtenir une tension et une température depuis la station météo
+//*Programmes associés : AUCUN
+//*********************************************************************************************/
 #include "Tpstation.h"
 
 Tpstation::Tpstation(QWidget *parent)
@@ -6,7 +17,7 @@ Tpstation::Tpstation(QWidget *parent)
     ui.setupUi(this);
 	carteES = K8055Adapter::getInstance();
 	carteES->OpenDevice(0);
-	QSqlDatabase BDD = QSqlDatabase::addDatabase("QMYSQL");
+	QSqlDatabase BDD = QSqlDatabase::addDatabase("METEO");
 	BDD.setHostName("192.168.65.35");
 	BDD.setUserName("root");
 	BDD.setPassword("root");
