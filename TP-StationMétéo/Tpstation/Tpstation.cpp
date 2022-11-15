@@ -12,9 +12,9 @@
 #include "Tpstation.h"
 
 Tpstation::Tpstation(QWidget *parent)
-    : QMainWindow(parent)
+	: QMainWindow(parent)
 {
-    ui.setupUi(this);
+	ui.setupUi(this);
 	carteES = K8055Adapter::getInstance();
 	carteES->OpenDevice(0);
 	QSqlDatabase BDD = QSqlDatabase::addDatabase("METEO");
@@ -30,9 +30,6 @@ Tpstation::Tpstation(QWidget *parent)
 		qDebug() << "BDD: Erreur de connexion";
 	}
 }
-
-Tpstation::~Tpstation()
-{}
 
 void Tpstation::Allumage()
 {
@@ -60,8 +57,12 @@ void Tpstation::getValue()
 		QString temp = QString::number(valeurTemperature);
 
 		QSqlQuery query;
-		query.exec("INSERT INTO `meteo`(`valeurBrut`, `tension`, `temperature`) VALUES(" + valueRecue + "," + tension + "," + temp + ")");
-		
+		query.prepare("INSERT INTO `Meteo`(`ValeurRecue`, `Tension`, `Temperature`) VALUES(:valeur, :tension, :temperature)");
+		query.bindValue(":valeur", valeurRecue);
+		query.bindValue(":tension", valeurTension);
+		query.bindValue(":temperature", valeurTemperature);
+		query.exec();
+
 		ui.valTension->setText(tension + " V");
 		ui.valTemp->setText(temp + " °C");
 	}
@@ -69,3 +70,6 @@ void Tpstation::getValue()
 		ui.valTemp->setText("NULL");
 	}
 }
+
+Tpstation::~Tpstation()
+{}
