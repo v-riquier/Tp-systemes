@@ -1,13 +1,13 @@
 /*********************************************************************************************/
-//* Programme : TpFour.h date : 09/11/2022
+//* Programme : TpFour.h date : 22/11/2022
 //*---------------------------------------------------------------------------------------------------------
-//* dernière mise a jour : 09/11/2022
+//* derniï¿½re mise a jour : 22/11/2022
 //*
 //*Programmeurs : Riquier Vincent classe : BTSSN2
 //* Ciss Aissatou
 //*--------------------------------------------------------------------------------------------------------
 //* BUT : Obtenir la temperature du four
-//*Programmes associés : AUCUN
+//*Programmes associï¿½s : AUCUN
 //*********************************************************************************************/
 #include "TPFour.h"
 
@@ -47,7 +47,7 @@ void TPFour::getTemperature()
 	double tension;
 	AI_VReadChannel(cardId, 0, AD_B_10_V, &tension);
 	double temp = tension;
-	ui.lblnbTemperature->setText(QString::number(temp) + " °C");
+	ui.lblnbTemperature->setText(QString::number(temp) + " ï¿½C");
 }
 
 TPFour::~TPFour()
